@@ -13,10 +13,10 @@ import numpy as np
 import streamlit as st  # <-- Añadimos la librería para la interfaz web
 
 # El título que se verá en la pestaña y arriba en la página
-st.set_page_config(page_title="Calculadora de Coeficientes", page_icon="🏗️")
-st.title("🏗️ Cálculo de Coeficientes en Fórmulas de Recurrencia")
+st.set_page_config(page_title="COEFICIENTES EN LAS FORMULAS DE RECURRRENCIA", page_icon="🏗️")
+st.title("🏗️ Metodo de las 8 constantes")
 st.write("Introduce las variables de tu sistema estructural y presiona el botón para calcular.")
-st.write("Creado por:Diego Ivan Zamorano Saldivar II Facultad de ingenieria UNAM")
+st.write("Creado por: Diego Ivan Zamorano Saldivar II Facultad de ingenieria UNAM")
 
 #-------------Variables de entrada editables desde la web---
 st.sidebar.header("Variables de Entrada") # Panel lateral organizado
@@ -90,6 +90,6 @@ if st.button("⚡ Calcular Coeficientes"):
             st.write(f"**Cp** = `{Cp:.5e}`")
             st.write(f"**Dp** = `{Dp:.5e}`")
 
-        # Tu mensaje final
+        # mensaje final
         st.info("😎 Everything is dude, cool")
         st.info("(Si, asi suena mejor)")

@@ -16,8 +16,9 @@ import streamlit as st  # <-- Añadimos la librería para la interfaz web
 st.set_page_config(page_title="Calculadora de Coeficientes", page_icon="🏗️")
 st.title("🏗️ Cálculo de Coeficientes en Fórmulas de Recurrencia")
 st.write("Introduce las variables de tu sistema estructural y presiona el botón para calcular.")
+st.write("Creado por:Diego Ivan Zamorano Saldivar II Facultad de ingenieria UNAM")
 
-#-------------Variables de entrada (Ahora editables desde la web)---
+#-------------Variables de entrada editables desde la web---
 st.sidebar.header("Variables de Entrada") # Panel lateral organizado
 
 zeta = st.sidebar.number_input("Coeficiente de amortiguamiento (zeta)", value=0.05, min_value=-1.0, step=0.01, format="%.4f")
@@ -28,7 +29,7 @@ dt = st.sidebar.number_input("Intervalo de tiempo (dt)", value=0.01, min_value=-
 # Botón para ejecutar el código con un clic
 if st.button("⚡ Calcular Coeficientes"):
 
-    #-------------Verificaciones importantes (Tus alertas de error en la web)---
+    #-------------Verificaciones importantes (alertas de error en la web)---
     if zeta <= 0:
         st.error("❌ El amortiguamiento no puede ser negativo o nulo.")
     elif zeta >= 1:
@@ -40,7 +41,7 @@ if st.button("⚡ Calcular Coeficientes"):
     elif dt <= 0:
         st.error("❌ El intervalo de tiempo debe ser mayor que cero.")
     else:
-        # Si todo está bien, corre tu lógica exacta:
+        # Siguiente paso: corre lógica exacta:
         wn = np.sqrt(k / m) 
         wD = wn * np.sqrt(1 - zeta**2) 
         Tn = (2 * np.pi) / wn 
@@ -52,7 +53,7 @@ if st.button("⚡ Calcular Coeficientes"):
         sin_term = np.sin(wD * dt)
         cos_term = np.cos(wD * dt)
 
-        #------------Calculo de los coeficientes (Tus fórmulas intactas)----
+        #------------Calculo de los coeficientes ---------------------------
         A = exp_term * ((zeta / raiz) * sin_term + cos_term)
         B = exp_term * ((1 / wD) * sin_term)
         C = (1 / k) * ((2 * zeta) / (wn * dt) + exp_term * (((1 - 2 * zeta**2) / (wD * dt) - zeta / raiz) * sin_term - (1 + (2 * zeta) / (wn * dt)) * cos_term))
@@ -67,7 +68,7 @@ if st.button("⚡ Calcular Coeficientes"):
         #----------------Impresion de resultados en la interfaz web--------
         st.success("✨ ¡Cálculo completado con éxito!")
         
-        # Estructuramos en columnas para que se vea estético
+        # Estructuramos en columnas para que se vea chidooooo
         col1, col2 = st.columns(2)
         
         with col1:
@@ -91,3 +92,4 @@ if st.button("⚡ Calcular Coeficientes"):
 
         # Tu mensaje final
         st.info("😎 Everything is dude, cool")
+        st.info("(Si, asi suena mejor)")

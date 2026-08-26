@@ -16,7 +16,7 @@ import streamlit as st  # <-- Añadimos la librería para la interfaz web
 st.set_page_config(page_title="COEFICIENTES EN LAS FORMULAS DE RECURRRENCIA", page_icon="🏗️")
 st.title("🏗️ COEFICIENTES EN LAS FORMULAS DE RECURRRENCIA")
 st.write("Metodo de las 8 constantes")
-st.write("Introduce las variables de tu sistema estructural y presiona el botón para calcular.")
+st.write(" En el panel de la izquierda introduce las variables de tu sistema estructural y presiona el botón para calcular.")
 st.write("Creado por: Diego Ivan Zamorano Saldivar II Facultad de ingenieria UNAM")
 
 #-------------Variables de entrada editables desde la web---
